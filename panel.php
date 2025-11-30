@@ -34,8 +34,10 @@ $medicamentos = $stmt->fetchAll();
         <?php endif; ?>
 
         <p>
-            <a class="btn" href="registro.php">Registrar Medicamento</a>
             <a class="btn" href="logout.php">Cerrar sesión</a>
+            <a class="btn" href="registro.php">Registrar Medicamento</a>
+            <a href="proveedores.php" class="btn">Gestionar Proveedores</a>
+            <a class="btn" href="usuarios.php">Usuarios</a>
         </p>
 
         <table>

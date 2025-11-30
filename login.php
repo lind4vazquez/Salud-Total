@@ -14,9 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica el password usando la columna REAL: clave
     if ($admin && password_verify($password, $admin['clave'])) {
+
+        // ----------- ESTO VA AQUÍ ------------------
         $_SESSION['user_id'] = $admin['id'];
+        $_SESSION['user_rol'] = $admin['rol'];
+        // -------------------------------------------
+
         header('Location: panel.php');
         exit;
+
     } else {
         $error = "Usuario o contraseña incorrectos.";
     }
@@ -48,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="password" required>
 
         <button type="submit">Entrar</button>
+        <p>¿No tienes cuenta? <a href="registro-usuario.php">Registrarse</a></p>
 
     </form>
 

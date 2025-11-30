@@ -32,4 +32,9 @@ function flash_message() {
     }
     return '';
 }
+
+function is_admin() {
+    return isset($_SESSION['user_rol']) && $_SESSION['user_rol'] === 'admin';
+}
+
 ?>
